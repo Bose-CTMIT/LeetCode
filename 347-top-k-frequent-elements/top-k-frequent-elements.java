@@ -1,29 +1,25 @@
-public class Solution {
+class Solution {
     public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer, Integer> count = new HashMap<>();
-        List<Integer>[] freq = new List[nums.length + 1];
+        Map<Integer,Integer> map=new HashMap<>();
+        List<Integer>[] list=new List[nums.length + 1];
 
-        for (int i = 0; i < freq.length; i++) {
-            freq[i] = new ArrayList<>();
+        for(int i=0;i<list.length;i++){
+            list[i]=new ArrayList<>();
         }
-
-        for (int n : nums) {
-            count.put(n, count.getOrDefault(n, 0) + 1);
+        for(int n:nums){
+            map.put(n,map.getOrDefault(n,0)+1);
         }
-        for (Map.Entry<Integer, Integer> entry : count.entrySet()) {
-            freq[entry.getValue()].add(entry.getKey());
+        for(Map.Entry<Integer,Integer> entry: map.entrySet()){
+            list[entry.getValue()].add(entry.getKey());
         }
-
-        int[] res = new int[k];
-        int index = 0;
-        for (int i = freq.length - 1; i > 0 && index < k; i--) {
-            for (int n : freq[i]) {
-                res[index++] = n;
-                if (index == k) {
-                    return res;
-                }
+        int[] ret=new int[k];
+        int index=0;
+        for(int i=list.length -1 ;i>0 && index<k ;i--){
+            for(int n:list[i]){
+                ret[index++]=n;
+                if(index==k)return ret;
             }
         }
-        return res;
+        return ret;
     }
 }
