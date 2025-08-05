@@ -12,7 +12,6 @@ class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy=new ListNode(0,head);
         ListNode groupprev=dummy;
-
         while(true){
             ListNode kth= get(groupprev,k);
             if(kth ==null){
@@ -33,7 +32,6 @@ class Solution {
         }
         return dummy.next;
     }
-
     private ListNode get(ListNode curr,int k){
         while(curr!=null && k>0){
             curr=curr.next;
