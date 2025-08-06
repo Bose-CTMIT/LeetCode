@@ -19,8 +19,7 @@ class Solution {
                 stack.push(b/a);
             }
             else{
-                int a=Integer.parseInt(s);
-                stack.push(a);
+                stack.push(Integer.parseInt(s));
             }
         }
         return stack.pop();
