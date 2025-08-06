@@ -1,20 +1,21 @@
-class Solution {
+public class Solution {
     public List<String> generateParenthesis(int n) {
-        List<List<String>> list= new ArrayList<>();
-        for(int i=0;i<=n;i++){
-            list.add(new ArrayList<>());
+        List<List<String>> res = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            res.add(new ArrayList<>());
         }
-        list.get(0).add("");
+        res.get(0).add("");
 
-        for(int i=0;i<=n;i++){
-            for(int j=0;j<i;j++){
-                for(String left:list.get(j)){
-                    for(String right:list.get(i-j-1)){
-                        list.get(i).add( "(" + left + ")" + right);
+        for (int k = 0; k <= n; k++) {
+            for (int i = 0; i < k; i++) {
+                for (String left : res.get(i)) {
+                    for (String right : res.get(k - i - 1)) {
+                        res.get(k).add("(" + left + ")" + right);
                     }
                 }
             }
         }
-        return list.get(n);
+
+        return res.get(n);
     }
 }
