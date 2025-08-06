@@ -23,6 +23,6 @@ class Solution {
                 stack.push(a);
             }
         }
-        return stack.peek();
+        return stack.pop();
     }
 }
