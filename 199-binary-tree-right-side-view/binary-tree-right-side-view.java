@@ -16,7 +16,8 @@
 class Solution {
     List<Integer> res=new ArrayList<>();
     public List<Integer> rightSideView(TreeNode root) {
-        //dfs(root,0);
+        dfs(root,0);
+        /*
         Queue<TreeNode> q=new LinkedList<>();
         q.add(root);
         while(!q.isEmpty()){
@@ -34,9 +35,10 @@ class Solution {
                 res.add(rightside.val);
             }
         }
+        */
         return res;
     }
-    /*
+    
     public void dfs(TreeNode root,int depth){
         if(root==null)return;
         if(res.size() == depth){
@@ -45,5 +47,5 @@ class Solution {
         dfs(root.right,depth+1);
         dfs(root.left,depth+1);
     }
-    */
+    
 }
