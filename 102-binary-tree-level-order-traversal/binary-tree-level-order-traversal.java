@@ -14,10 +14,11 @@
  * }
  */
 class Solution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> res=new ArrayList<>();
+    List<List<Integer>> res=new ArrayList<>();
 
-        Queue<TreeNode> q=new LinkedList<>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+
+        /*Queue<TreeNode> q=new LinkedList<>();
         q.add(root);
         
         while(!q.isEmpty()){
@@ -35,6 +36,20 @@ class Solution {
                 res.add(level);
             }
         }
+        */
+        dfs(root,0);
         return res;
+    }
+
+    public void dfs(TreeNode root,int depth){
+        if(root==null)return;
+
+        if(res.size()==depth){
+            res.add(new ArrayList<>());
+        }
+
+        res.get(depth).add(root.val);
+        dfs(root.left,depth+1);
+        dfs(root.right,depth+1);
     }
 }
