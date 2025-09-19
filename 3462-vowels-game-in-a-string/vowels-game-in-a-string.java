@@ -3,9 +3,8 @@ class Solution {
         String vowel="aeiou";
         int count=0;
         for(char c:s.toCharArray()){
-            if(vowel.indexOf(c)!=-1)count++;
+            if(vowel.indexOf(c)!=-1)return true;
         }
-        if(count==0)return false;
-        return true;
+        return false;
     }
 }
