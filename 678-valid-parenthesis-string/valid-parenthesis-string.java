@@ -1,0 +1,22 @@
+class Solution {
+    public boolean checkValidString(String s) {
+        int leftmax=0,leftmin=0;
+        for(char c:s.toCharArray()){
+            if(c=='('){
+                leftmax++;
+                leftmin++;
+            }
+            else if(c==')'){
+                leftmax--;
+                leftmin--;
+                if(leftmax<0)return false;
+            }
+            else{
+                leftmax++;
+                leftmin--;
+            }
+            if(leftmin<0)leftmin=0;
+        }
+        return leftmin==0;
+    }
+}
