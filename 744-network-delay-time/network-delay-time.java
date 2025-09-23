@@ -9,14 +9,12 @@ class Solution {
         minheap.offer(new int[]{0,k});
         int t=0;
         Set<Integer> visited=new HashSet<>();
-
         while(!minheap.isEmpty()){
             int[] cur=minheap.poll();
             int w1=cur[0],n1=cur[1];
             if(visited.contains(n1))continue;
             visited.add(n1);
             t=w1;
-
             if(edges.containsKey(n1)){
                 for(int[] edge:edges.get(n1)){
                     int n2=edge[0],w2=edge[1];
