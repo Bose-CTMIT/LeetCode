@@ -9,7 +9,6 @@ class KthLargest {
             if(min.size()>k)min.poll();
         }
     }
-    
     public int add(int val) {
         min.offer(val);
         if(min.size()>k)min.poll();
