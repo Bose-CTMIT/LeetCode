@@ -10,6 +10,7 @@ class Solution {
                 prev=cur;
                 cur=1;
             }
+            
         }
         result+=Math.min(prev,cur);
         return result;
