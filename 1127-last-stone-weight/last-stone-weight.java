@@ -8,12 +8,8 @@ class Solution {
             int x=maxheap.poll();
             int y=maxheap.poll();
             if(x!=y)maxheap.offer(x-y);
-            System.out.println(maxheap.peek());
-            if(maxheap.size()==1||maxheap.size()==0){
-                break;
-            }
+            if(maxheap.size()==1||maxheap.size()==0)break;
         }
-        //System.out.println(maxheap.peek());
         if(maxheap.size()==1)return maxheap.peek();
         return 0;
     }
