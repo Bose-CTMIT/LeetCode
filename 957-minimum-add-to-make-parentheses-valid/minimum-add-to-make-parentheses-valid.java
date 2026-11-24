@@ -7,7 +7,7 @@ class Solution {
             else stack.push(c);
         }
         return stack.size();
-        */
+        
         int n=s.length();
         int j=0;
         char[] a=s.toCharArray();
@@ -16,5 +16,15 @@ class Solution {
             else a[j++]=a[i];
         }
         return j;
+        */
+        int open=0,close=0;
+        for(char c:s.toCharArray()){
+            if(c=='(')open++;
+            else{
+                if(open==0)close++;
+                else open--;
+            }
+        }
+        return open+close;
     }
 }
