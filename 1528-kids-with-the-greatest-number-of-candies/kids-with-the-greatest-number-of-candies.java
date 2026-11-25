@@ -6,10 +6,7 @@ class Solution {
             if(max<n)max=n;
         }
         //System.out.print(max);
-        for(int n:candies){
-            if(n+extraCandies >= max) res.add(true);
-            else res.add(false);
-        }
+        for(int n:candies) res.add(n+extraCandies>=max?true:false);
         return res;
     }
 }
