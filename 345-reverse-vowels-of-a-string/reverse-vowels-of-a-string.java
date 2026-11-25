@@ -6,7 +6,7 @@ class Solution {
         while(i<j){
             while(i<j && vowel.indexOf(c[i])==-1)i++;
             while(i<j && vowel.indexOf(c[j])==-1)j--;
-            if(vowel.indexOf(c[i])!=-1 && vowel.indexOf(c[j])!=-1){
+            if(i<j){
                 char x=c[i];
                 c[i]=c[j];
                 c[j]=x;
