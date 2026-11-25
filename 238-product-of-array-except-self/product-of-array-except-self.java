@@ -1,5 +1,24 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
+        int product=1,count0=0,pos0=-1,n=nums.length;
+        for(int i=0;i<n;i++){
+            if(nums[i]==0){
+                if(count0==1) return new int[n];
+                else{
+                    count0++;pos0=i;
+                }
+            }
+            else product*=nums[i];
+        }
+        int[] res=new int[n];
+        if(count0==1){
+            res[pos0]=product; return res;
+        }
+        for(int i=0;i<n;i++){
+            res[i]=product/nums[i];
+        }
+        return res;
+        /*
         List<Integer> zero=new ArrayList<>();
         //int[] zero=new int[nums.length];
         int product=1,j=0,res=0;
@@ -28,5 +47,6 @@ class Solution {
             Arrays.fill(ret,0);
             return ret;
         }
+        */
     }
 }
