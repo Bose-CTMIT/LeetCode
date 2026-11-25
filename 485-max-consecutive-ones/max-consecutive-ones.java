@@ -8,6 +8,7 @@ class Solution {
                 res=0;
             }
         }
-        return Math.max(max,res);
+        max=Math.max(max,res);
+        return max;
     }
 }
