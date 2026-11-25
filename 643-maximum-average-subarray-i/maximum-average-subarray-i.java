@@ -9,6 +9,6 @@ class Solution {
             cur+=nums[i]-nums[i-k];
             max=Math.max(max,cur);
         }
-        return (double)max/k;
+        return(double)max/k;
     }
 }
