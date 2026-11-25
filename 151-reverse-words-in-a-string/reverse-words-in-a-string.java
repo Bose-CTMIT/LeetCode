@@ -13,12 +13,11 @@ class Solution {
         */
 
         StringBuilder sb = new StringBuilder();
-        for(int i = str.length-1; i>=0; i--){
-            if(sb.length()>0){
-                sb.append(" ");
-            }
-            sb.append(str[i]);   
+        for(int i = str.length-1; i>=1; i--){
+            sb.append(str[i]);
+            sb.append(" "); 
         }
+        sb.append(str[0]);
         return sb.toString();
     }
 }
