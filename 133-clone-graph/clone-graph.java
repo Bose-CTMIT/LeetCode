@@ -24,7 +24,7 @@ class Solution {
         if(node == null)return null;
         if(map.containsKey(node))return map.get(node);
 
-        Node clone=new Node(node.val,new ArrayList<>());
+        Node clone=new Node(node.val);
         map.put(node,clone);
         for(Node n:node.neighbors){
             clone.neighbors.add(cloneGraph(n));
