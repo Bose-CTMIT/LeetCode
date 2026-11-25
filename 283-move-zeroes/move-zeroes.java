@@ -9,6 +9,5 @@ class Solution {
             }
             j++;
         }
-        for(j=j;j<n;j++)nums[j]=0;
     }
 }
